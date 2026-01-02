@@ -7,3 +7,4 @@ venv/
 *.log.docx
 nohup.out
 .DS_Store
+TODO.md
