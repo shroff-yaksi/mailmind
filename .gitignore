@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.class
+.env
+env/
+venv/
+*.log.docx
+nohup.out
+.DS_Store
