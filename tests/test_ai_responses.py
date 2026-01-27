@@ -43,7 +43,9 @@ class TestAIResponseGeneration:
         assert "received your message" in response
 
     @patch("mailmind.OpenRouterClient._make_api_request")
-    def test_successful_response_generation(self, mock_request):
+    @patch("mailmind.OpenRouterClient._get_cached_response", return_value=None)
+    @patch("mailmind.OpenRouterClient._cache_response")
+    def test_successful_response_generation(self, mock_cache, mock_get_cache, mock_request):
         """Test successful AI response generation"""
         mock_request.return_value = {
             "choices": [{"message": {"content": "This is an AI response"}}],
@@ -51,7 +53,7 @@ class TestAIResponseGeneration:
         }
 
         client = OpenRouterClient(api_key="test_key")
-        response, tokens = client.generate_response(
+        response, tokens, _, _ = client.generate_response(
             email_content="Test email", sender="test@example.com", subject="Test"
         )
 
@@ -59,7 +61,9 @@ class TestAIResponseGeneration:
         assert tokens == 150
 
     @patch("mailmind.OpenRouterClient._make_api_request")
-    def test_response_with_long_content(self, mock_request):
+    @patch("mailmind.OpenRouterClient._get_cached_response", return_value=None)
+    @patch("mailmind.OpenRouterClient._cache_response")
+    def test_response_with_long_content(self, mock_cache, mock_get_cache, mock_request):
         """Test response generation with very long content"""
         mock_request.return_value = {
             "choices": [{"message": {"content": "Short response"}}],
@@ -69,7 +73,7 @@ class TestAIResponseGeneration:
         client = OpenRouterClient(api_key="test_key")
         long_content = "a" * 20000  # Very long content
 
-        response, tokens = client.generate_response(
+        response, tokens, _, _ = client.generate_response(
             email_content=long_content, sender="test@example.com", subject="Test"
         )
 
@@ -78,7 +82,9 @@ class TestAIResponseGeneration:
         assert tokens == 100
 
     @patch("mailmind.OpenRouterClient._make_api_request")
-    def test_response_with_special_characters(self, mock_request):
+    @patch("mailmind.OpenRouterClient._get_cached_response", return_value=None)
+    @patch("mailmind.OpenRouterClient._cache_response")
+    def test_response_with_special_characters(self, mock_cache, mock_get_cache, mock_request):
         """Test response generation with special characters"""
         mock_request.return_value = {
             "choices": [{"message": {"content": "Response to special chars"}}],
@@ -87,7 +93,7 @@ class TestAIResponseGeneration:
 
         client = OpenRouterClient(api_key="test_key")
 
-        response, tokens = client.generate_response(
+        response, tokens, _, _ = client.generate_response(
             email_content="Test\x00with\nnull\tbytes",
             sender="test@example.com",
             subject="Special <chars>",
@@ -104,15 +110,18 @@ class TestAIResponseGeneration:
             mock_post.side_effect = Exception("Timeout")
 
             # Should use fallback
-            response, tokens = client.generate_response(
-                email_content="Test", sender="test@example.com", subject="Test Subject"
-            )
+            with patch("mailmind.OpenRouterClient._get_cached_response", return_value=None):
+                response, tokens, _, _ = client.generate_response(
+                    email_content="Test", sender="test@example.com", subject="Test Subject"
+                )
 
             assert "Thank you for your email" in response
             assert tokens == 0
 
     @patch("mailmind.OpenRouterClient._make_api_request")
-    def test_missing_usage_data(self, mock_request):
+    @patch("mailmind.OpenRouterClient._get_cached_response", return_value=None)
+    @patch("mailmind.OpenRouterClient._cache_response")
+    def test_missing_usage_data(self, mock_cache, mock_get_cache, mock_request):
         """Test handling of missing usage data in API response"""
         mock_request.return_value = {
             "choices": [{"message": {"content": "Response without usage"}}]
@@ -120,7 +129,7 @@ class TestAIResponseGeneration:
         }
 
         client = OpenRouterClient(api_key="test_key")
-        response, tokens = client.generate_response(
+        response, tokens, _, _ = client.generate_response(
             email_content="Test", sender="test@example.com", subject="Test"
         )
 
@@ -128,7 +137,9 @@ class TestAIResponseGeneration:
         assert tokens == 0  # Should default to 0
 
     @patch("mailmind.OpenRouterClient._make_api_request")
-    def test_context_in_prompt(self, mock_request):
+    @patch("mailmind.OpenRouterClient._get_cached_response", return_value=None)
+    @patch("mailmind.OpenRouterClient._cache_response")
+    def test_context_in_prompt(self, mock_cache, mock_get_cache, mock_request):
         """Test that context is properly included in prompt"""
         mock_request.return_value = {
             "choices": [{"message": {"content": "Contextual response"}}],
@@ -136,7 +147,7 @@ class TestAIResponseGeneration:
         }
 
         client = OpenRouterClient(api_key="test_key")
-        response, tokens = client.generate_response(
+        response, tokens, _, _ = client.generate_response(
             email_content="Question about product",
             sender="customer@example.com",
             subject="Product Inquiry",

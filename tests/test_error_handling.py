@@ -109,7 +109,7 @@ class TestOpenRouterClientErrorHandling:
                 response=mock_response
             )
 
-            response, tokens = client.generate_response(
+            response, tokens, _, _ = client.generate_response(
                 "Test email", "test@example.com", "Test Subject"
             )
 
@@ -128,7 +128,7 @@ class TestOpenRouterClientErrorHandling:
                 response=mock_response
             )
 
-            response, tokens = client.generate_response(
+            response, tokens, _, _ = client.generate_response(
                 "Test email", "test@example.com", "Test Subject"
             )
 
@@ -143,7 +143,7 @@ class TestOpenRouterClientErrorHandling:
         with patch.object(client, "_make_api_request") as mock_request:
             mock_request.side_effect = requests.exceptions.Timeout()
 
-            response, tokens = client.generate_response(
+            response, tokens, _, _ = client.generate_response(
                 "Test email", "test@example.com", "Test Subject"
             )
 
@@ -158,7 +158,7 @@ class TestOpenRouterClientErrorHandling:
         with patch.object(client, "_make_api_request") as mock_request:
             mock_request.side_effect = requests.exceptions.ConnectionError()
 
-            response, tokens = client.generate_response(
+            response, tokens, _, _ = client.generate_response(
                 "Test email", "test@example.com", "Test Subject"
             )
 
@@ -170,7 +170,10 @@ class TestOpenRouterClientErrorHandling:
         """Test that inputs are sanitized"""
         client = OpenRouterClient(api_key="test_key")
 
-        with patch.object(client, "_make_api_request") as mock_request:
+        with patch.object(client, "_make_api_request") as mock_request, \
+             patch.object(client, "_get_cached_response", return_value=None), \
+             patch.object(client, "_cache_response"):
+            
             mock_request.return_value = {
                 "choices": [{"message": {"content": "AI response"}}],
                 "usage": {"total_tokens": 100},
@@ -178,7 +181,7 @@ class TestOpenRouterClientErrorHandling:
 
             # Test with potentially harmful input
             malicious_content = "Test\x00email" + "a" * 20000
-            response, tokens = client.generate_response(
+            response, tokens, _, _ = client.generate_response(
                 malicious_content, "test@example.com", "Test Subject"
             )
 

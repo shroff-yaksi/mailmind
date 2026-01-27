@@ -43,7 +43,9 @@ class TestEmailParsing:
             config=sample_email_config, openrouter_api_key="test_key"
         )
 
-        assert processor._should_process_email(sample_email_message) is True
+        from unittest.mock import patch
+        with patch.object(processor, "_is_business_hours", return_value=True):
+            assert processor._should_process_email(sample_email_message) is True
 
     def test_should_process_email_spam(self, sample_email_config, sample_spam_email):
         """Test that spam emails are filtered out"""
