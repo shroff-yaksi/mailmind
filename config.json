@@ -1,19 +1,20 @@
 {
+  "_comment": "This is a template config file. Actual credentials are loaded from .env file",
   "email": {
     "imap_server": "imap.gmail.com",
     "imap_port": 993,
     "smtp_server": "smtp.gmail.com",
     "smtp_port": 587,
-    "email_address": "yaksishroffbackup@gmail.com",
-    "password": "pmav vdqv tprc prjy",
+    "email_address": "FROM_ENV",
+    "password": "FROM_ENV",
     "use_ssl": true
   },
   "openrouter": {
-    "api_key": "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",
+    "api_key": "FROM_ENV",
     "model": "sarvamai/sarvam-m:free"
   },
   "settings": {
-    "signature": "Yaksi Shroff",
+    "signature": "FROM_ENV",
     "response_delay": 300,
     "check_interval": 300
   }

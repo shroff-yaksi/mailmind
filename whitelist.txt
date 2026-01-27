@@ -1,0 +1,21 @@
+# Email Whitelist Configuration
+
+# Whitelisted email addresses (exact match)
+# Emails from these addresses will ALWAYS be processed, even if they match blacklist rules
+# One email per line, comments start with #
+
+# Important contacts
+boss@company.com
+client@important-client.com
+
+# Whitelisted domains (all emails from these domains will be processed)
+# Format: @domain.com
+@my-company.com
+@trusted-partner.com
+
+# Examples (commented out):
+# important-person@example.com
+# @trusted-domain.com
+
+# Note: Whitelist takes precedence over blacklist
+# If an email matches both whitelist and blacklist, it will be processed

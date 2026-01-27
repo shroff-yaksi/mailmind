@@ -1,0 +1,41 @@
+# Email Blacklist Configuration
+
+# Blacklisted email addresses (exact match)
+# One email per line, comments start with #
+
+# Spam addresses
+spam@example.com
+noreply@spam-domain.com
+
+# Blacklisted domains (all emails from these domains will be ignored)
+# Format: @domain.com
+@spam-domain.com
+@marketing-spam.net
+
+# Blacklisted keywords in sender address
+# Any email containing these keywords will be ignored
+# Format: *keyword*
+*noreply*
+*no-reply*
+*donotreply*
+*automated*
+*newsletter*
+*marketing*
+*notifications*
+
+# Blacklisted subject keywords
+# Emails with these keywords in subject will be ignored
+# Format: subject:keyword
+subject:unsubscribe
+subject:viagra
+subject:lottery
+subject:congratulations
+subject:urgent
+subject:act now
+subject:limited time
+
+# Examples (commented out):
+# specific-spam@example.com
+# @unwanted-domain.com
+# *unwanted-keyword*
+# subject:spam-subject

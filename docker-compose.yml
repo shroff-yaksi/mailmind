@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mailmind:
+    build: .
+    container_name: mailmind
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./attachments:/app/attachments
+      - ./mailmind.db:/app/mailmind.db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10mb"
+        max-file: "3"

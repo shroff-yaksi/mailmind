@@ -1,10 +1,43 @@
+# Python
 __pycache__/
 *.py[cod]
 *.class
-.env
+*.pyc
+
+# Virtual Environment
 env/
 venv/
+.venv/
+
+# Environment Variables & Secrets
+.env
+config.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
 *.log.docx
 nohup.out
+
+# OS Files
 .DS_Store
+Thumbs.db
+
+# Project Specific
 TODO.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover

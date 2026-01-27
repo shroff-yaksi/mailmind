@@ -1,14 +1,11 @@
-from mailmind import EmailProcessor, EmailConfig, OpenRouterClient, load_config
-
+import json
+from mailmind import EmailProcessor, EmailConfig, OpenRouterClient
 
 def test_connection():
-    # Load config from environment variables
-    config = load_config()
-
-    if not config:
-        print("❌ Failed to load configuration. Please check your .env file.")
-        return
-
+    # Load config
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    
     # Test email connection
     email_config = EmailConfig(
         imap_server=config["email"]["imap_server"],
@@ -17,39 +14,34 @@ def test_connection():
         smtp_port=config["email"]["smtp_port"],
         email_address=config["email"]["email_address"],
         password=config["email"]["password"],
-        use_ssl=config["email"]["use_ssl"],
+        use_ssl=config["email"]["use_ssl"]
     )
-
+    
     processor = EmailProcessor(
-        config=email_config, openrouter_api_key=config["openrouter"]["api_key"]
+        config=email_config,
+        openrouter_api_key=config["openrouter"]["api_key"]
     )
-
+    
     # Test connections
     try:
-        print("Testing IMAP connection...")
         imap = processor.connect_imap()
         print("✅ IMAP connection successful")
         imap.logout()
-
-        print("\nTesting SMTP connection...")
+        
         smtp = processor.connect_smtp()
         print("✅ SMTP connection successful")
         smtp.quit()
-
-        print("\nTesting OpenRouter API...")
-        ai_client = OpenRouterClient(
-            config["openrouter"]["api_key"], config["openrouter"]["model"]
-        )
+        
+        # Test AI
+        ai_client = OpenRouterClient(config["openrouter"]["api_key"])
         response, tokens = ai_client.generate_response(
-            "Test email", "test@example.com", "Test Subject"
+            "Test email", "uvaghasia77@gmail.com", "Test Subject"
         )
         print("✅ OpenRouter API working")
         print(f"Sample response: {response[:100]}...")
-        print(f"Tokens used: {tokens}")
-
+        
     except Exception as e:
         print(f"❌ Error: {e}")
-
 
 if __name__ == "__main__":
     test_connection()

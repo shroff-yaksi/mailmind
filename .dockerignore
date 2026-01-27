@@ -1,0 +1,34 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Ignore virtual environments
+env/
+venv/
+.venv/
+
+# Ignore sensitive files
+.env
+*.db
+*.sqlite
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignore IDE
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore data directory
+data/

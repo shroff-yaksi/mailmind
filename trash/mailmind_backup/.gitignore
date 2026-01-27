@@ -1,0 +1,6 @@
+env/
+__pycache__/
+config.json
+mailmind.db
+mailmind.log
+nohup.out

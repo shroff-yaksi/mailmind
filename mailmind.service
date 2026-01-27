@@ -1,0 +1,15 @@
+[Unit]
+Description=MailMind AI Email Responder
+After=network.target
+
+[Service]
+Type=simple
+User=mailmind
+WorkingDirectory=/opt/mailmind
+ExecStart=/opt/mailmind/venv/bin/python mailmind.py
+Restart=always
+RestartSec=10
+EnvironmentFile=/opt/mailmind/.env
+
+[Install]
+WantedBy=multi-user.target
