@@ -4,6 +4,15 @@ requests>=2.31.0
 # Environment & Configuration
 python-dotenv>=1.0.0
 
+# Secrets Management (OS keychain)
+keyring>=24.0.0
+
+# Database Encryption (Fernet-based backup encryption)
+cryptography>=41.0.0
+
+# Web Dashboard
+flask>=3.0.0
+
 # Testing
 pytest>=7.4.0
 pytest-mock>=3.12.0

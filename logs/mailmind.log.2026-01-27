@@ -1,0 +1,76 @@
+2026-01-27 22:36:17,133 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,134 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,134 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,134 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,135 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,135 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,135 - mailmind - INFO - Outside business hours. Skipping for now.
+2026-01-27 22:36:17,137 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,137 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,137 - mailmind - INFO - Blacklisted sender/subject: spammer@example.com
+2026-01-27 22:36:17,138 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,138 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,138 - mailmind - INFO - Outside business hours. Skipping for now.
+2026-01-27 22:36:17,138 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:36:17,138 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:36:17,138 - mailmind - INFO - Blacklisted sender/subject: noreply@example.com
+2026-01-27 22:36:17,139 - mailmind - WARNING - Attempt 1/3 failed for unknown_function: fail. Retrying in 0.1s...
+2026-01-27 22:36:17,243 - mailmind - WARNING - Attempt 2/3 failed for unknown_function: fail. Retrying in 0.2s...
+2026-01-27 22:36:17,450 - mailmind - WARNING - Attempt 1/2 failed for unknown_function: always fails. Retrying in 0.1s...
+2026-01-27 22:36:17,552 - mailmind - WARNING - Attempt 2/2 failed for unknown_function: always fails. Retrying in 0.2s...
+2026-01-27 22:36:17,757 - mailmind - ERROR - All 2 retry attempts failed for unknown_function: always fails
+2026-01-27 22:36:17,764 - mailmind - ERROR - AI error: 
+2026-01-27 22:36:17,768 - mailmind - ERROR - AI error: 
+2026-01-27 22:36:17,770 - mailmind - ERROR - AI error: 
+2026-01-27 22:36:17,771 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:18,965 - mailmind - ERROR - AI error: Timeout
+2026-01-27 22:38:18,989 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,991 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,991 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,991 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,992 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,992 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,992 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,993 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,993 - mailmind - INFO - Blacklisted sender/subject: spammer@example.com
+2026-01-27 22:38:18,993 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,993 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,993 - mailmind - INFO - Outside business hours. Skipping for now.
+2026-01-27 22:38:18,994 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:18,994 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:18,994 - mailmind - INFO - Blacklisted sender/subject: noreply@example.com
+2026-01-27 22:38:18,994 - mailmind - WARNING - Attempt 1/3 failed for unknown_function: fail. Retrying in 0.1s...
+2026-01-27 22:38:19,096 - mailmind - WARNING - Attempt 2/3 failed for unknown_function: fail. Retrying in 0.2s...
+2026-01-27 22:38:19,301 - mailmind - WARNING - Attempt 1/2 failed for unknown_function: always fails. Retrying in 0.1s...
+2026-01-27 22:38:19,406 - mailmind - WARNING - Attempt 2/2 failed for unknown_function: always fails. Retrying in 0.2s...
+2026-01-27 22:38:19,611 - mailmind - ERROR - All 2 retry attempts failed for unknown_function: always fails
+2026-01-27 22:38:19,627 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:19,629 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:19,631 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:19,632 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:19,633 - mailmind - INFO - Using cached AI response
+2026-01-27 22:38:45,818 - mailmind - ERROR - AI error: Timeout
+2026-01-27 22:38:45,829 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,829 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,830 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,830 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,830 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,830 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,831 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,831 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,831 - mailmind - INFO - Blacklisted sender/subject: spammer@example.com
+2026-01-27 22:38:45,831 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,831 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,831 - mailmind - INFO - Outside business hours. Skipping for now.
+2026-01-27 22:38:45,832 - mailmind - INFO - Loaded 2 whitelisted emails, 2 blacklisted emails
+2026-01-27 22:38:45,832 - mailmind - INFO - Loaded 5 email templates
+2026-01-27 22:38:45,832 - mailmind - INFO - Blacklisted sender/subject: noreply@example.com
+2026-01-27 22:38:45,833 - mailmind - WARNING - Attempt 1/3 failed for unknown_function: fail. Retrying in 0.1s...
+2026-01-27 22:38:45,933 - mailmind - WARNING - Attempt 2/3 failed for unknown_function: fail. Retrying in 0.2s...
+2026-01-27 22:38:46,139 - mailmind - WARNING - Attempt 1/2 failed for unknown_function: always fails. Retrying in 0.1s...
+2026-01-27 22:38:46,244 - mailmind - WARNING - Attempt 2/2 failed for unknown_function: always fails. Retrying in 0.2s...
+2026-01-27 22:38:46,449 - mailmind - ERROR - All 2 retry attempts failed for unknown_function: always fails
+2026-01-27 22:38:46,458 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:46,461 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:46,462 - mailmind - ERROR - AI error: 
+2026-01-27 22:38:46,464 - mailmind - ERROR - AI error: 
